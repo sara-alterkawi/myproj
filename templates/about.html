@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+{% include 'navbar.html' %}
+
+<!-- About Us Content -->
+<div class="container" style="padding-top: 20px;">
+    <div class="row" style="padding-top: 100px;">
+        <!-- Jonatan -->
+        <div class="col-md-6 team-member">
+            <div class="card">
+                <div class="card-body p-3">
+                    <div class="card-front">
+                        <img src="{% static 'image/person.png' %}" class="card-img-top logo" alt="Jonatan">
+                        <h3 class="color-1">Jonatan</h3>
+                    </div>
+                    <div class="card-back">
+                        <h3 class="color-1">Jonatan</h3>
+                        <h5 class="color-2">PLC expert</h5>
+                        <p class="text-light text-center">With in-depth expertise in Programmable Logic Controllers
+                            (PLCs), Jonatan was the undisputed authority in automation and
+                            machinery control. His unparalleled proficiency ensured seamless and robust PLC
+                            connectivity, propelling the project's
+                            automated processes forward.</p>
+                        <p class="color-3 text-center">Jonatan focued on establishing and mending PLC connections.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Albin -->
+        <div class="col-md-6 team-member">
+            <div class="card">
+                <div class="card-body p-3">
+                    <div class="card-front">
+                        <img src="{% static 'image/person.png' %}" class="card-img-top logo" alt="Albin">
+                        <h3 class="color-1">Albin</h3>
+                    </div>
+                    <div class="card-back">
+                        <h3 class="color-1">Albin</h3>
+                        <h5 class="color-2">Network specialist</h5>
+                        <p class="text-light text-center">Being a Network Specialist, took charge of setting up and
+                            optimizing the network infrastructure. His expertise was
+                            crucial in integrating advanced technology like Raspberry Pi and robotics into the network.
+                            Albin made sure that
+                            communication is seamless and security is robust across all networked devices. He proved to
+                            be indispensable in managing
+                            and securing complex network systems.</p>
+                        <p class="color-3 text-center">Albin connected the Raspberry Pi to the network.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <!-- Osama -->
+        <div class="col-md-6 team-member">
+            <div class="card">
+                <div class="card-body p-3">
+                    <div class="card-front">
+                        <img src="{% static 'image/person.png' %}" class="card-img-top logo" alt="Osama">
+                        <h3 class="color-1">Osama</h3>
+                    </div>
+                    <div class="card-back">
+                        <h3 class="color-1">Osama</h3>
+                        <h5 class="color-2">Circuit Architecture Maestro</h5>
+                        <p class="text-light text-center">Osama's expertise in circuit systems architecture proved
+                            invaluable in establishing the project's seamless network
+                            connectivity. His meticulous optimization of connections and unwavering commitment to robust
+                            security measures ensured
+                            that the platform flawlessly interfaced with external devices like the Raspberry Pi.</p>
+                        <p class="color-3 text-center">Osama's Crucial Intervention in Circuit Board Repair.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Sara -->
+        <div class="col-md-6 team-member">
+            <div class="card">
+                <div class="card-body p-3">
+                    <div class="card-front">
+                        <img src="{% static 'image/person.png' %}" class="card-img-top logo" alt="Sara">
+                        <h3 class="color-1">Sara</h3>
+                    </div>
+                    <div class="card-back">
+                        <h3 class="color-1">Sara</h3>
+                        <h5 class="color-2">FOUNDER</h5>
+                        <p class="text-light text-center">A versatile Full Stack Developer is a valuable asset in the
+                            web application development arena. Possessing a well-rounded
+                            skillset, they seamlessly handle both front-end and back-end responsibilities, ensuring a
+                            harmonious user experience and
+                            robust data management. Their expertise encompasses database administration, API creation,
+                            and a deep understanding of
+                            web technologies. This multifaceted approach empowers them to tackle diverse technical
+                            hurdles and play a pivotal role
+                            in the development and expansion of web platforms.</p>
+                        <p class="color-3 text-center">Sara the Architect of Web Applications</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% include 'footer.html' %}
+
+{% endblock content %}

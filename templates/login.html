@@ -1,0 +1,58 @@
+<!-- ====================================
+    ——— LOGIN MODAL
+    ===================================== -->
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>
+        {{ message }}
+        </li>
+        {% endfor %}
+</ul>
+{% endif %}
+
+<div class="container-fluid text-center panel panel-default formPanel">
+    <div class="row">
+        <div class="col-md-4 offset-md-4 jumbotron">
+            <h3 class="panel-title bg-color-1">
+                LOG IN INFO
+            </h3>
+            <form action="" method="post">
+                {% csrf_token %}
+
+                <div class="form-group form-inline formField">
+                    <label for="username">
+                        <i class="fas fa-envelope bg-color-1"></i>
+                    </label>
+                    <input type="text" placeholder="Enter email" name="username" id="username" class="form-control">
+                </div>
+
+                <div class="form-group form-inline formField">
+                    <label for="password">
+                        <i class="fas fa-key bg-color-1"></i></label>
+                    <input type="password" placeholder="Password" id="password" name="password" class="form-control">
+                </div>
+
+                <div class="form-group form-inline formField">
+                    <button type="submit" class="btn btn-primary btn-block bg-color-3">
+                        LOG IN
+                    </button>
+                </div>
+
+                <p class="text-center mt-3">
+                    Not a member?
+                    <a href="{% url 'signup' %}" class="btn btn-link" style="color: #080710;">
+                        SIGN UP
+                    </a>
+                </p>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

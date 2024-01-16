@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+{% include 'navbar.html' %}
+
+<!-- WebSocket Test -->
+<div class="container" style="padding-top: 100px;">
+    <div class="row">
+        <h1 class="text-light">WebSocket Test (Raspberry Pi)</h1>
+        <div class="text-light" id="message-container">
+            <!-- Messages will be displayed here -->
+        </div>
+    </div>
+
+</div>
+
+{% include 'footer.html' %}
+
+    <script>
+        const messageContainer = document.getElementById('message-container');
+
+        // Define the WebSocket URL to connect to the "raspberry_pi"
+        const wsUrl = 'ws://' + window.location.host + '/ws/' + 'raspberry_pi' + '/'
+
+        // Create a WebSocket connection
+        const socket = new WebSocket(wsUrl);
+
+        socket.onmessage = function (event) {
+            const data = JSON.parse(event.data);
+            appendMessage(data);
+        };
+
+        socket.onclose = function (event) {
+            console.error('WebSocket closed unexpectedly');
+        };
+
+        function appendMessage(data) {
+            const messageElement = document.createElement('div');
+            messageElement.innerHTML = formatData(data.message); 
+            messageContainer.appendChild(messageElement);
+        }
+
+        function formatData(object) {
+            let formattedMessage = '<strong>Received Data:</strong><br>';
+
+            for (const key in object) {
+                formattedMessage += `<strong>${key}:</strong> ${object[key]}<br>`;
+            }
+
+            return formattedMessage;
+        }
+    </script>
+
+{% endblock content %}

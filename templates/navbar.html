@@ -1,0 +1,61 @@
+<!-- NAVBAR STARTING -->
+
+<header id="pageTop" class="header-Wrapper fixed-top">
+  <!-- COLOR BAR -->
+  {% include 'color-bar.html' %}
+  <!-------------------------->
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light text-center" style="background-color: rgba(255, 255, 255, 0.9);">
+    <a class="navbar-brand" href="{% url 'home' %}">
+      <img class="logo" src="/static/image/logo.png" alt="Robotic">
+      <span class="color-1 font-weight-bold">Robotic</span>
+      <span> </span>
+      <span class="color-2 font-weight-bold">Letter</span>
+      <span> </span>
+      <span class="color-3 font-weight-bold">Collector</span>
+    </a>
+    <!-------------------------->
+
+    <!--Brand and toggle get grouped for better mobile display -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#responsive-nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-------------------------->
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-ex1-collapse" id="responsive-nav">
+      <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item active nav-item {% if request.path == '/login/' %}active{% endif %}">
+          <a href="{% url 'home' %}" class="nav-link" role="button" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-home bg-color-4" aria-hidden="true"></i>
+            <span class="active color-4">Home</span>
+          </a>
+        </li>
+
+        <li class="nav-item {% if request.path == '/login/' %}active{% endif %}">
+          <a class="nav-link" href="{% url 'about' %}">
+            <i class="fa fa-info bg-color-5"></i>
+            <span class="color-5">About</span>
+          </a>
+        </li>
+
+        <li class="nav-item {% if request.path == '/login/' %}active{% endif %}">
+          <a class="nav-link" href="{% url 'logout' %}">
+            <i class="fas fa-sign-out-alt bg-color-6"></i>
+            <span class="color-6">Sign Out</span>
+          </a>
+        </li>
+
+      </ul>
+    </div>
+
+    </div>
+  </nav>
+  <!-------------------------->
+
+  <!-- COLOR BAR -->
+  {% include 'color-bar.html' %}
+  <!-------------------------->
+</header>
